@@ -9,7 +9,7 @@
 	<?php endwhile; ?>
 
 	<?php // 输出页码
-		dpt_pagenavi(); ?>
+		cdt_pagenavi(); ?>
 
 <?php else : ?>
 

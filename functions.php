@@ -4,21 +4,22 @@
 
 add_action('after_setup_theme', 'my_theme_setup');
 function my_theme_setup() {
-	load_theme_textdomain('dpt', get_template_directory() . '/lang');
+	load_theme_textdomain('cdt', get_template_directory() . '/lang');
+	add_option("SEO_keywords","博客,blog");
 }
 
 // 定义导航
 
 register_nav_menus(array(
-	'main' => __( 'Main Nav','dpt' ),
+	'main' => __( 'Main Nav','cdt' ),
 ));
 
 // 定义侧边栏
 
 if ( function_exists('register_sidebar') )
 	register_sidebar(array(
-		'name' => __( 'Sidebar', 'dpt' ),
-		'id' => 'dpt',
+		'name' => __( 'Sidebar', 'cdt' ),
+		'id' => 'cdt',
 		'description' => 'Sidebar',
 		'class' => '',
 		'before_widget' => '',
@@ -38,11 +39,11 @@ $wpdaxue_update_checker = new ThemeUpdateChecker(
 
 // 主题使用统计，如果需要。
 
-function dpt_count() {
+function cdt_count() {
 
 // Ajax 统计函数
 
-function dpt_tjaj() { ?>
+function cdt_tjaj() { ?>
 	<script type="text/javascript">
 	jQuery(document).ready(function() {
 		// 修改地址为服务器的 theme_tj.php 页面。请参见 func 目录
@@ -53,29 +54,29 @@ function dpt_tjaj() { ?>
 
 // 统计筛选条件
 
-$dpt_fitj = get_option('dpt_fitj');
-$dpt_dayv = get_option('dpt_dayv');
-$dpt_date = date('d'); 
+$cdt_fitj = get_option('cdt_fitj');
+$cdt_dayv = get_option('cdt_dayv');
+$cdt_date = date('d'); 
 
-if ($dpt_fitj == true) { 
-	if($dpt_date == '01') {
-		if ($dpt_dayv != true) {
-			dpt_tjaj();
-			update_option( 'dpt_dayv', true );
+if ($cdt_fitj == true) { 
+	if($cdt_date == '01') {
+		if ($cdt_dayv != true) {
+			cdt_tjaj();
+			update_option( 'cdt_dayv', true );
 		};
-	} elseif ($dpt_date != '01') {
-		update_option( 'dpt_dayv', false );
+	} elseif ($cdt_date != '01') {
+		update_option( 'cdt_dayv', false );
 	};
 } else {
-	dpt_tjaj();
-	update_option( 'dpt_fitj', true );
+	cdt_tjaj();
+	update_option( 'cdt_fitj', true );
 };
 
 };
 
 // 获取博客标题
 
-function dpt_title( $title, $sep ) {
+function cdt_title( $title, $sep ) {
 	global $paged, $page;
 
 	if ( is_feed() )
@@ -88,16 +89,16 @@ function dpt_title( $title, $sep ) {
 		$title = "$title $sep $site_description";
 
 	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( '页面 %s', 'dpt' ), max( $paged, $page ) );
+		$title = "$title $sep " . sprintf( __( '页面 %s', 'cdt' ), max( $paged, $page ) );
 
 	return $title;
 }
 
-add_filter( 'wp_title', 'dpt_title', 10, 2 );
+add_filter( 'wp_title', 'cdt_title', 10, 2 );
 
 // 页面导航
 
-function dpt_pagenavi () {
+function cdt_pagenavi () {
 	global $wp_query, $wp_rewrite;
 	$wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
 
@@ -110,8 +111,8 @@ function dpt_pagenavi () {
 		'type' => 'plain',
 		'end_size'=>'0',
 		'mid_size'=>'5',
-		'prev_text' => __('上一页','dpt'),
-		'next_text' => __('下一页','dpt')
+		'prev_text' => __('上一页','cdt'),
+		'next_text' => __('下一页','cdt')
 	);
 
 	if( $wp_rewrite->using_permalinks() )
@@ -125,8 +126,8 @@ function dpt_pagenavi () {
 
 // 加载评论
 
-if ( ! function_exists( 'dpt_comment' ) ) :
-function dpt_comment( $comment, $args, $depth ) {
+if ( ! function_exists( 'cdt_comment' ) ) :
+function cdt_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
@@ -147,7 +148,7 @@ function dpt_comment( $comment, $args, $depth ) {
 					printf( '<div class="cmt_meta_head"><cite class="fn">%1$s',
 						get_comment_author_link() );
 					printf( '%1$s </cite>',
-						( $comment->user_id === $post->post_author ) ? '<span class="cmt_meta_auth"> ' . __('作者','dpt') . '</span>' : '' );
+						( $comment->user_id === $post->post_author ) ? '<span class="cmt_meta_auth"> ' . __('作者','cdt') . '</span>' : '' );
 					printf( '</div><span class="cmt_meta_time"><a href="%1$s"><time datetime="%2$s">%3$s</time></a></span>',
 						esc_url( get_comment_link( $comment->comment_ID ) ),
 						get_comment_time( 'c' ),
@@ -157,14 +158,14 @@ function dpt_comment( $comment, $args, $depth ) {
 			</header>
 
 			<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e('审核中','dpt'); ?></p>
+				<p class="comment-awaiting-moderation"><?php _e('审核中','cdt'); ?></p>
 			<?php endif; ?>
 
 			<section class="comment-content comment">
 				<?php comment_text(); ?>
-				<?php edit_comment_link( __('編輯','dpt'), '<span class="edit-link">', '</span>' ); ?>
+				<?php edit_comment_link( __('編輯','cdt'), '<span class="edit-link">', '</span>' ); ?>
 				<?php delete_comment_link(get_comment_ID()); ?>
-				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __('回复','dpt'), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __('回复','cdt'), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 			</section>
 
 		</article>
@@ -176,50 +177,34 @@ endif;
 
 // 后台设置页面
 
-function dpt_menu_func(){   
+function cdt_menu_func(){   
 	add_theme_page(
-		__('设置','dpt'),
-		__('设置','dpt'),
+		__('设置','cdt'),
+		__('设置','cdt'),
 		'administrator',
-		'dpt_menu',
-		'dpt_config');
+		'cdt_menu',
+		'cdt_config');
 }
 
-add_action('admin_menu', 'dpt_menu_func');
+add_action('admin_menu', 'cdt_menu_func');
 
-function dpt_config(){ dpt_thtj(); ?>
+function cdt_config(){ //cdt_thtj(); ?>
 
-<form method="post" name="dpt_form" id="dpt_form">
+<form method="post" name="cdt_form" id="cdt_form">
 
 <h1><?php _e('主题设置'); ?></h1>
+<label for="SEO_keywords">搜索引擎关键词：</label>
 
-<input type="text" size="80" name="dpt_example" id="dpt_example" placeholder="<?php _e('示例控件','dpt'); ?>" value="<?php echo get_option('dpt_example'); ?>"/>
-<input type="button" name="upload_button" value="<?php _e('上传','dpt'); ?>" id="upbottom"/><br>
+<input type="text" size="80" name="SEO_keywords" id="SEO_keywords" placeholder="<?php _e('SEO关键词 请用英文逗号分隔','cdt'); ?>" value="<?php echo get_option('SEO_keywords'); ?>"/>
+<br>
 
-<input type="submit" name="option_save" value="<?php _e('保存设置','dpt'); ?>" />
+<input type="submit" name="option_save" value="<?php _e('保存设置','cdt'); ?>" />
 
-<?php wp_enqueue_script('thickbox'); wp_enqueue_style('thickbox'); ?>
-	<script type="text/javascript">
-	// 导入 WordPress 媒体上传组件
-jQuery(document).ready(function() {
-	// 选择按钮
-	jQuery('#upbottom').click(function() {
-		// 选择目标文本框
-		targetfield = jQuery(this).prev('#dpt_example');
-		tb_show('', 'media-upload.php?type=image&amp;TB_iframe=true');
-		return false;
-	});
-	window.send_to_editor = function(html) {
-		imgurl = jQuery('img',html).attr('src');
-		jQuery(targetfield).val(imgurl);
-		tb_remove();
-	}	
-});
-	</script>
+
 
 <?php wp_nonce_field('update-options'); ?>
 <input type="hidden" name="action" value="update" />
-<input type="hidden" name="page_options" value="dpt_copy_right" />
+<input type="hidden" name="page_options" value="cdt_copy_right" />
 
 </form>
 
@@ -229,8 +214,8 @@ jQuery(document).ready(function() {
 
 if(isset($_POST['option_save'])){
 
-	$dpt_example = stripslashes($_POST['dpt_example']);
-	update_option( 'dpt_example', $dpt_example );
+	$SEO_keywords = stripslashes($_POST['SEO_keywords']);
+	update_option( 'SEO_keywords', $SEO_keywords );
 }
 
 ?>
