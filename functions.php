@@ -11,7 +11,7 @@ function my_theme_setup() {
 // 定义导航
 
 register_nav_menus(array(
-	'main' => __( 'Main Nav','cdt' ),
+	'main' => __( '首页导航条','cdt' ),
 ));
 
 // 定义侧边栏

@@ -38,4 +38,6 @@
 <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 <h2><?php bloginfo( 'description' ); ?></h2>
 
-	<?php wp_nav_menu( array( 'theme_location' => 'Nav' ) ); ?>
+	<?php wp_nav_menu( array( 'theme_location' => 'main',
+							'container' => 'div',
+							'menu_class' => 'nav' ) ); ?>
