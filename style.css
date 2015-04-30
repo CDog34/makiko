@@ -16,6 +16,7 @@ Text Domain: startpress
 html, body {
 	margin: 0;
 	padding: 0;
+	height: 100%
 }
 
 /* Common */
@@ -25,22 +26,61 @@ h1, h2, h3, h4, h5, h6, p, q, blockquote, li, a {
 	font-family: "Segeo UI Mono", "Hiragino Sans GB", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Micro Hei Mono", "Droid Sans Fallback", "WenQuanYi Zen Hei", "WenQuanYi Zen Hei", "Apple LiGothic Medium", "SimHei", "ST Heiti", "WenQuanYi Zen Hei Sharp", Sans;
 	color: #454647;
 }
+.blog-meta{
+	text-align: center;
+}
+.navmenu{
+	margin: 0px auto;
+	width: 90%;
+	padding: 0;
+}
 
 /* 对于文章内图片的宽度自适应。请将 article 改为文章内容容器，范围越小越不容易导致误伤。 */
 article img , article .wp-caption {
 	max-width: 100% !important;
 }
-
-.clearfix {
-	clear: both;
+.menu-item{
+	float: left;
+	height: 40px;
+	list-style: none;
+	margin: 0px 0px;
+	padding: 5px 10px;
 }
+.menu-item a{
+	text-decoration: none;
+	line-height: 40px;
+	font-size: 20px;
+	color: white;
+}
+
+header#header{
+
+	  /*margin-top: -21px;*/
+	  height:300px;
+}
+nav.nav{
+	width: 100%;
+	background-color: #ff6262;
+	margin: 0 auto;
+	padding: 0;
+	float: left;
+	box-shadow: 11px 6px 5px #888888;
+}
+#navwrap{
+	background-color:  rgb(255, 98, 98);
+}
+#main-banner{
+	background-size: cover;
+	height: 100%
+}
+.clearfix:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
 
 /* Main */
 /* 开始主体样式。推荐将布局和样式分离。 */
 
 #page {
-	width: 600px;
-	margin: 0 auto;
+	/*width: 90%;*/
+	/*margin: 0 auto;*/
 }
 
 /* 自适应主题下日历小工具布局的自动调整(如果需要) */
@@ -53,6 +93,16 @@ article img , article .wp-caption {
 	font-weight: bold;
 	margin-bottom: 5px;
 	margin-left: -5px;
+}
+div#blog-title{
+	padding-top: 102px;
+}
+
+div#blog-title a{
+	
+	text-decoration: none;
+	font-size: 56px;
+	color: black;
 }
 
 /* Mobile */

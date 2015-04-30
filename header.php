@@ -34,10 +34,14 @@
 
 <body>
 <div id="page">
+<header id="header" class="blog-meta" >
+	<div id="main-banner" class="blog-meta" style="background-image:url(<?php bloginfo('template_url'); ?>/src/img/banner.jpg);" >
+		<div id="blog-title" class="blog-meta"><h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1></div>
+		<div id="blog-subtitle" class="blog-meta"><h2><?php bloginfo( 'description' ); ?></h2></div>
+	</div>
+		<?php wp_nav_menu( array( 'theme_location' => 'main',
+								'container' => 'nav',
+								'container_class' => 'nav',
+								'menu_class' => 'clearfix navmenu' ) ); ?>
 
-<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-<h2><?php bloginfo( 'description' ); ?></h2>
-
-	<?php wp_nav_menu( array( 'theme_location' => 'main',
-							'container' => 'div',
-							'menu_class' => 'nav' ) ); ?>
+</header>
