@@ -17,4 +17,22 @@ $(function(){
 				}
 			}
 		});
+
+	//SubMenu
+	$("li.menu-item-has-children>a").mouseenter(function(evt){
+		$(".sub-menu").fadeOut(700);
+		var sub=$(evt.target).next();
+		console.log(sub);
+		sub.fadeIn(700,function(){
+			sub.mouseleave(function(){
+			sub.fadeOut(700);
+		});
+		});
+	});
+
+		
+	$("li.menu-item-has-children>a").mouseleave(function(evt){
+
+		
+	});
 });
