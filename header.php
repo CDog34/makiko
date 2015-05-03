@@ -24,10 +24,12 @@
 <![endif]-->
 
 <?php wp_head(); ?>
+<script>inadmin=false;</script>
 
 <?php if ( is_admin_bar_showing() ) {
 	// 如果有 fiexd top 定位的元素，在这为 Admin Bar 增加 32px 顶边距
 	echo '<style type="text/css" media="screen"> #float { top: 32px; } </style>' ;
+	echo "<script>inadmin=true;</script>";
 } ?>
 
 </head>
@@ -39,9 +41,11 @@
 		<div id="blog-title" class="blog-meta"><h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1></div>
 		<div id="blog-subtitle" class="blog-meta"><h2><?php bloginfo( 'description' ); ?></h2></div>
 	</div>
+	<div id="navpos"></div>
 		<?php wp_nav_menu( array( 'theme_location' => 'main',
 								'container' => 'nav',
 								'container_class' => 'nav',
+								'container_id' => 'navbar',
 								'menu_class' => 'clearfix navmenu' ) ); ?>
 
 </header>

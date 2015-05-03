@@ -34,23 +34,37 @@ h1, h2, h3, h4, h5, h6, p, q, blockquote, li, a {
 	width: 90%;
 	padding: 0;
 }
+nav#navbar ul.sub-menu{
+	display: none;
+}
 
+
+.menu-item a:hover{
+	background-color: #FCA6A6;
+}
 /* 对于文章内图片的宽度自适应。请将 article 改为文章内容容器，范围越小越不容易导致误伤。 */
 article img , article .wp-caption {
 	max-width: 100% !important;
+
 }
 .menu-item{
 	float: left;
 	height: 40px;
 	list-style: none;
-	margin: 0px 0px;
-	padding: 5px 10px;
+	margin: 0;
+	padding: 0;
 }
 .menu-item a{
+	padding: 5px 10px;
 	text-decoration: none;
 	line-height: 40px;
 	font-size: 20px;
 	color: white;
+	display: inline-block;
+	transition:background-color 0.5s;
+	-moz-transition:background-color 0.5s; /* Firefox 4 */
+	-webkit-transition:background-color 0.5s; /* Safari and Chrome */
+	-o-transition:background-color 0.5s; /* Opera */
 }
 
 header#header{
@@ -60,6 +74,7 @@ header#header{
 }
 nav.nav{
 	width: 100%;
+	height: 50px;
 	background-color: #ff6262;
 	margin: 0 auto;
 	padding: 0;
