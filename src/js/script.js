@@ -20,19 +20,16 @@ $(function(){
 
 	//SubMenu
 	$("li.menu-item-has-children>a").mouseenter(function(evt){
-		$(".sub-menu").fadeOut(700);
+		$(".sub-menu").fadeOut(200);
 		var sub=$(evt.target).next();
 		console.log(sub);
-		sub.fadeIn(700,function(){
+		sub.fadeIn(200,function(){
 			sub.mouseleave(function(){
-			sub.fadeOut(700);
+			sub.fadeOut(200);
 		});
 		});
 	});
 
 		
-	$("li.menu-item-has-children>a").mouseleave(function(evt){
-
-		
-	});
+	
 });
