@@ -1,7 +1,10 @@
 </div>
 
 <footer id="footer" role="contentinfo">
-	<p>Based on StartPress</p>
+	<div id="footinner">
+	<p>CDog's Makiko<br>
+		Based on StartPress</p>
+</div>
 </footer>
 <?php wp_footer();  ?>
 <script src="//upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.3.min.js" type="text/javascript"></script>

@@ -49,3 +49,4 @@
 								'menu_class' => 'clearfix navmenu' ) ); ?>
 
 </header>
+<div id="content" class="clearfix">

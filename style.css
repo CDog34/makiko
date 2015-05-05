@@ -16,7 +16,8 @@ Text Domain: startpress
 html, body {
 	margin: 0;
 	padding: 0;
-	height: 100%
+	height: 100%;
+	width : 100%;
 }
 
 /* Common */
@@ -86,6 +87,7 @@ nav.nav{
 	padding: 0;
 	float: left;
 	box-shadow: 11px 6px 5px #888888;
+	z-index: 99
 }
 #navwrap{
 	background-color:  rgb(255, 98, 98);
@@ -137,6 +139,47 @@ div#blog-title a{
 	background-color: #FCA6A6;
 }
 
+/*main*/
+#content{
+	width: 1000px;
+	margin: 0px auto;
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+
+#main-left{
+	float: left;
+	width: 650px;
+	background-color: rgb(253, 242, 242);
+	margin-right: 5px;
+}
+#sidebar{
+	float: right;
+	margin-left: 5px;
+	width:240px;
+}
+.cols{
+	
+	background-color: rgb(253, 242, 242);
+	border-radius: 10px;
+	padding: 50px 20px;
+	overflow: hidden;
+
+}
+footer#footer{
+	height: 100px;
+	background-color: rgb(255, 98, 98);
+	box-shadow: 0px -5px 5px #888888;
+}
+#footinner{
+	width: 1000px;
+	margin: 0px auto;
+	padding-top: 10px;
+	color: white;
+}
+#footinner p{
+	color: inherit;
+}
 /* Mobile */
 /* 移动版响应式部分。 */
 

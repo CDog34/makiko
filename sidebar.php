@@ -1,3 +1,3 @@
-<aside id="sidebar">
+<div id="sidebar" class="cols">
 	<?php dynamic_sidebar( 'sidebar' ); ?>
-</aside>
+</div>

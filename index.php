@@ -1,6 +1,6 @@
 <?php // 获取头部
 	get_header(); ?>
-
+<div id="main-left" class="cols">
 <?php if ( have_posts() ) : ?>
 
 	<?php while ( have_posts() ) : the_post(); ?>
@@ -16,6 +16,10 @@
 	<h1>404</h1>
 	
 <?php endif; ?>
+</div>
+<?php
+get_sidebar();
+?>
 
 <?php // 获取尾部
 	get_footer(); ?>
