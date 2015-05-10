@@ -1,8 +1,11 @@
 <article>
 
+
+		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+		<div><?php the_content(__('继续阅读','cdt')); ?></div>
+		
 <hgroup>
 	<header>
-		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 		<?php the_category(' ') ?>
 		<a href="<?php the_author_link(); ?>"><?php the_author(); ?></a>
 		<?php the_tags('',',',''); ?>
@@ -11,6 +14,6 @@
 	</header>
 </hgroup>
 
-<div><?php the_content(__('继续阅读','cdt')); ?></div>
+
 
 </article>

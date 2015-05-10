@@ -218,4 +218,10 @@ if(isset($_POST['option_save'])){
 	update_option( 'SEO_keywords', $SEO_keywords );
 }
 
+function emtx_excerpt_length( $length ) {
+	return 150; //把92改为你需要的字数，具体就看你的模板怎么显示了。
+}
+add_filter( 'excerpt_length', 'emtx_excerpt_length' );
+
+
 ?>
