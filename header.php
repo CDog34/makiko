@@ -31,7 +31,7 @@
 	echo '<style type="text/css" media="screen"> #float { top: 32px; } </style>' ;
 	echo "<script>inadmin=true;</script>";
 } ?>
-
+<script type="text/javascript" src="http://api.hitokoto.us/rand?encode=js&charset=utf-8"></script>
 </head>
 
 <body>

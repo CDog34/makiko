@@ -2,8 +2,11 @@
 
 <footer id="footer" role="contentinfo">
 	<div id="footinner">
-	<p>CDog's Makiko<br>
-		Based on StartPress</p>
+	<p style="display:block;">CDog's Makiko<br>
+		Based on StartPress <br> <br>
+		
+		<span id="hitokoto"><script>hitokoto()</script></span>
+ </p>
 </div>
 </footer>
 <?php wp_footer();  ?>

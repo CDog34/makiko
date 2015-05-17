@@ -14,7 +14,7 @@ Text Domain: startpress
 /* @import url('src/reset.css'); */
 
 html, body {
-	background-color: rgb(242, 234, 234);
+	/*background-color: rgb(242, 234, 234);*/
 	margin: 0;
 	padding: 0;
 	height: 100%;
@@ -168,9 +168,13 @@ div#blog-title a{
 
 }
 footer#footer{
-	height: 100px;
+	padding: 30px;
 	background-color: rgb(255, 98, 98);
 	box-shadow: 0px -5px 5px #888888;
+}
+#hitokoto a{
+	color: inherit;
+	text-decoration: none;
 }
 #footinner{
 	width: 1000px;
@@ -182,12 +186,7 @@ footer#footer{
 	color: inherit;
 }
 
-article{
-	margin: 50px 0px;
-	background-color: rgb(195, 195, 195);
-	box-shadow: 0px 2px 5px#888888;
 
-}
 .article-inner{
 	padding: 36px;
 	background-color: white;
